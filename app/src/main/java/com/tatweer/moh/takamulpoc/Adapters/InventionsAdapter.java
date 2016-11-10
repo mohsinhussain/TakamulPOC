@@ -1,11 +1,13 @@
 package com.tatweer.moh.takamulpoc.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,9 @@ import com.tatweer.moh.takamulpoc.R;
 
 import java.util.List;
 
+import me.wangyuwei.flipshare.FlipShareView;
+import me.wangyuwei.flipshare.ShareItem;
+
 /**
  * Created by moh on 11/9/2016.
  */
@@ -27,10 +32,12 @@ public class InventionsAdapter extends RecyclerView.Adapter<InventionsAdapter.My
 
     private Context mContext;
     private List<Invention> inventionList;
+    private Activity mActivity;
 
-    public InventionsAdapter(Context mContext, List<Invention> inventionList) {
+    public InventionsAdapter(Context mContext, List<Invention> inventionList, Activity mActivity) {
         this.mContext = mContext;
         this.inventionList = inventionList;
+        this.mActivity = mActivity;
     }
 
     @Override
@@ -61,10 +68,38 @@ public class InventionsAdapter extends RecyclerView.Adapter<InventionsAdapter.My
         // loading invention cover using Glide library
         Glide.with(mContext).load(invention.getThumbnail()).into(holder.thumbnail);
 
-        holder.overflow.setOnClickListener(new View.OnClickListener() {
+        holder.like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPopupMenu(holder.overflow);
+                setLiked(holder.like);
+            }
+        });
+
+        holder.share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FlipShareView share = new FlipShareView.Builder(mActivity, view)
+                        .addItem(new ShareItem("Facebook", Color.WHITE, 0xff43549C, BitmapFactory.decodeResource(mContext.getResources(), R.drawable.facebook)))
+                        .addItem(new ShareItem("Twitter", Color.WHITE, 0xff4999F0, BitmapFactory.decodeResource(mContext.getResources(), R.drawable.twitter)))
+                        .addItem(new ShareItem("Instagram", Color.WHITE, 0xffD9392D, BitmapFactory.decodeResource(mContext.getResources(), R.drawable.instagram)))
+                        .addItem(new ShareItem("Watsapp", Color.WHITE, 0xff275F5E, BitmapFactory.decodeResource(mContext.getResources(), R.drawable.whatsup)))
+                        .addItem(new ShareItem("Skype", Color.WHITE, 0xff00AFF0, BitmapFactory.decodeResource(mContext.getResources(), R.drawable.skype)))
+                        .setBackgroundColor(0x60000000)
+                        .setItemDuration(100)
+                        .setSeparateLineColor(0x30000000)
+                        .setAnimType(FlipShareView.TYPE_VERTICLE)
+                        .create();
+
+                share.setOnFlipClickListener(new FlipShareView.OnFlipClickListener() {
+                    @Override
+                    public void onItemClick(int position) {
+                        Toast.makeText(mActivity, "position " + position + " is clicked.", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void dismiss() {
+                    }
+                });
             }
         });
     }
@@ -72,13 +107,18 @@ public class InventionsAdapter extends RecyclerView.Adapter<InventionsAdapter.My
     /**
      * Showing popup menu when tapping on 3 dots
      */
-    private void showPopupMenu(View view) {
+    private void setLiked(ImageView view) {
         // inflate menu
-        PopupMenu popup = new PopupMenu(mContext, view);
-        MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.menu_album, popup.getMenu());
-        popup.setOnMenuItemClickListener(new MyMenuItemClickListener());
-        popup.show();
+        if(view.getDrawable().getConstantState().equals
+                (mContext.getResources().getDrawable(R.drawable.heart_un_selected).getConstantState()))
+        {
+            view.setImageDrawable(mContext.getResources().getDrawable(R.drawable.heart_selected));
+        }
+        else
+        {
+            view.setImageDrawable(mContext.getResources().getDrawable(R.drawable.heart_un_selected));
+        }
+
     }
 
     @Override
@@ -88,7 +128,7 @@ public class InventionsAdapter extends RecyclerView.Adapter<InventionsAdapter.My
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, count, category, funded, backers, daysToGo, alreadyFunded;
-        public ImageView thumbnail, overflow;
+        public ImageView thumbnail, like, share;
         public ContentLoadingProgressBar progressBar;
 
         public MyViewHolder(View view) {
@@ -101,7 +141,8 @@ public class InventionsAdapter extends RecyclerView.Adapter<InventionsAdapter.My
             alreadyFunded = (TextView) view.findViewById(R.id.alreadyFunded);
             daysToGo = (TextView) view.findViewById(R.id.daysToGo);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
-            overflow = (ImageView) view.findViewById(R.id.overflow);
+            like = (ImageView) view.findViewById(R.id.likeImageView);
+            share = (ImageView) view.findViewById(R.id.shareImageView);
             progressBar = (ContentLoadingProgressBar) view.findViewById(R.id.progress);
         }
     }

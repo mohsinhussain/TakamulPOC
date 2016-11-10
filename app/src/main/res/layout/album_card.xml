@@ -45,7 +45,8 @@
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="@dimen/album_title_padding"
                 android:textColor="@color/textColorSecondary"
-                android:textSize="@dimen/title_text" />
+                android:textSize="@dimen/title_text"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/count"
@@ -71,14 +72,27 @@
                 android:paddingTop="@dimen/album_title_padding" />
 
             <ImageView
-                android:id="@+id/overflow"
-                android:layout_width="@dimen/ic_album_overflow_width"
-                android:layout_height="@dimen/ic_album_overflow_height"
+                android:id="@+id/likeImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thumbnail"
+                android:layout_marginRight="@dimen/ic_album_overflow_margin_top"
+                android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                android:layout_toLeftOf="@+id/shareImageView"
+                android:clickable="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/heart_un_selected" />
+
+            <ImageView
+                android:id="@+id/shareImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/thumbnail"
-                android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_dots" />
+                android:layout_marginRight="@dimen/ic_album_overflow_margin_top"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:src="@drawable/share" />
 
 
             <LinearLayout

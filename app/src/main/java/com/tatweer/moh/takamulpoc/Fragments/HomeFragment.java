@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
 
         inventionList = new ArrayList<>();
-        adapter = new InventionsAdapter(getActivity(), inventionList);
+        adapter = new InventionsAdapter(getActivity(), inventionList, getActivity());
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
@@ -82,43 +82,43 @@ public class HomeFragment extends Fragment {
                 R.drawable.album10,
                 R.drawable.album11};
 
-        Invention a = new Invention("True Romance", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        Invention a = new Invention("True Romance", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
                 covers[0], "Apps", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Xscpae", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        a = new Invention("Xscpae", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
                 covers[1], "Product Design", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Maroon 5", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        a = new Invention("Maroon 5", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
                 covers[2], "Table Top Games", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Born to Die","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        a = new Invention("Born to Die","Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                 covers[3], "Software", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Honeymoon", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        a = new Invention("Honeymoon", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
                 covers[4], "Gadgets", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("I Need a Doctor", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        a = new Invention("I Need a Doctor", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
                 covers[5], "Software",getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Loud","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        a = new Invention("Loud","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 covers[6], "Apps", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Legend", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        a = new Invention("Legend", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
                 covers[7], "Video Games", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Hello", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        a = new Invention("Hello", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
                 covers[8], "Gadgets", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Greatest Hits", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        a = new Invention("Greatest Hits", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 covers[9], "Apps", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
