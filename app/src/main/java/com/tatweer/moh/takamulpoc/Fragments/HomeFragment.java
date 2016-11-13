@@ -56,6 +56,8 @@ public class HomeFragment extends Fragment {
         return rootView;
     }
 
+
+
     public int getRandomNumber(int bound1, int bound2) {
         //make sure bound2> bound1
         int min = Math.min(bound1, bound2);
@@ -70,55 +72,55 @@ public class HomeFragment extends Fragment {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.album7,
-                R.drawable.album2,
-                R.drawable.album3,
-                R.drawable.album4,
-                R.drawable.album5,
-                R.drawable.album6,
-                R.drawable.album1,
-                R.drawable.album8,
-                R.drawable.album9,
-                R.drawable.album10,
-                R.drawable.album11};
+                R.drawable.laser,
+                R.drawable.shutterstock_sky,
+                R.drawable.setalite,
+                R.drawable.doctor,
+                R.drawable.tower,
+                R.drawable.machine,
+                R.drawable.finger,
+                R.drawable.polymers,
+                R.drawable.liver,
+                R.drawable.balls,
+                R.drawable.phone};
 
-        Invention a = new Invention("True Romance", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
+        Invention a = new Invention("MOBILE LASER SCANNING AND INFRASTRUCTURE MONITORING SYSTEM", "Middle East and UAE in particular have experienced a tremendous boom in property and infrastructure development over the last decade. In other cities, the underlying infrastructure available to property developers is typically mapped and documented well before the developer begins his work.",
                 covers[0], "Apps", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Xscpae", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+        a = new Invention("HUB CONTEST DISTRIBUTED ALGORITHM", "  We typically take for granted the amount of work needed for a simple phone call to occur between two mobile phones. Behind the scenes, hundreds, if not thousands of messages are communicated between a mobile handset, radio tower, and countless servers to enable your phone call to go smoothly. ",
                 covers[1], "Product Design", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Maroon 5", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+        a = new Invention("CLOCK SYNCHRONIZATION OVER COMMUNICATION ", " In real life, the communication paths from master to slave and reverse are not perfectly symmetric mainly due to dissimilar forward and reverse physical link delays and queuing delays. asymmetry, creates an error in the estimate of the slave clock’s offset from the master",
                 covers[2], "Table Top Games", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Born to Die","Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        a = new Invention("PATIENT-SPECIFIC SEIZURE CLASSIFICATION","The timely detection of an epileptic seizure to alert the patient is currently not available. The invention is a device that can classify specific seizures of patients. It is realized within a microchip (IC) and can be attached to the patient.",
                 covers[3], "Software", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Honeymoon", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        a = new Invention("ALTERNATIVE RENEWABLE ENERGY HARVESTING", "There has been increased demand to harvest energy from nontraditional alternative energy sources for self-powered sensors chipsets which are located in remote locations and that can operate at extremely low power levels.",
                 covers[4], "Gadgets", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("I Need a Doctor", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+        a = new Invention("TECHNIQUE FOR MOTOR CONTROL OVER PACKET NETWORKS", "Many industries rely on motor control systems to physically control automated machines in manufacturing, energy conservation, process control and other important functions. ",
                 covers[5], "Software",getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Loud","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        a = new Invention("INDOOR WIRELESS FINGERPRINTING TECHNIQUE","  Location information has gained significant attention for a variety of outdoor applications thanks to the reliable and popular GPS system. ",
                 covers[6], "Apps", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Legend", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        a = new Invention("POLYMERS AND PLASTICS FROM SULFUR COMPOUND", "Plastics are some of the most heavily used materials in our world. From plastic bags, to computer components - they are the back-bone material of our daily lives.",
                 covers[7], "Video Games", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Hello", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+        a = new Invention("FIBER-IN-FIBER BIOARTIFICIAL LIVER DEVICE", "Liver is a site for proteins and amino acids production. Once the liver fails, its function is very difficult to replicate. Up to date, there is no approved therapy but human liver transplant - bio artificial liver devices and incubating liver cells are only a short term solution to bridge the time for the patients to the ultimate liver transplant.",
                 covers[8], "Gadgets", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 
-        a = new Invention("Greatest Hits", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        a = new Invention("COMPACT SUFFIX TREE FOR BINARY PATTERN MATCHING", " While the “suffix tree” is an efficient structure to solve many string problems, especially in cloud storages, it requires a large memory space for building and storing the tree structure. ",
                 covers[9], "Apps", getRandomNumber(1, 30), getRandomNumber(1, 100), getRandomNumber(1, 3000));
         inventionList.add(a);
 

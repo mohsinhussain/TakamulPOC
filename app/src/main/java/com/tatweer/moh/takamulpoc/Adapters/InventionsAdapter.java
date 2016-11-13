@@ -2,6 +2,7 @@ package com.tatweer.moh.takamulpoc.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.v4.widget.ContentLoadingProgressBar;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.tatweer.moh.takamulpoc.Activities.DetailActivity;
 import com.tatweer.moh.takamulpoc.Models.Invention;
 import com.tatweer.moh.takamulpoc.R;
 
@@ -50,7 +52,7 @@ public class InventionsAdapter extends RecyclerView.Adapter<InventionsAdapter.My
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        Invention invention = inventionList.get(position);
+        final Invention invention = inventionList.get(position);
         holder.title.setText(invention.getName());
         holder.count.setText(invention.getDetail());
         holder.backers.setText(Integer.toString(invention.getBackers()));
@@ -102,6 +104,20 @@ public class InventionsAdapter extends RecyclerView.Adapter<InventionsAdapter.My
                 });
             }
         });
+        holder.mRootView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(mActivity, DetailActivity.class);
+                i.putExtra("category", invention.getCategory());
+                i.putExtra("title", invention.getName());
+                i.putExtra("progress", invention.getProgress());
+                i.putExtra("backers", invention.getBackers());
+                i.putExtra("daysToGo", invention.getDaysToGo());
+                i.putExtra("image", invention.getThumbnail());
+                i.putExtra("detail", invention.getDetail());
+                mActivity.startActivity(i);
+            }
+        });
     }
 
     /**
@@ -130,6 +146,7 @@ public class InventionsAdapter extends RecyclerView.Adapter<InventionsAdapter.My
         public TextView title, count, category, funded, backers, daysToGo, alreadyFunded;
         public ImageView thumbnail, like, share;
         public ContentLoadingProgressBar progressBar;
+        public View mRootView;
 
         public MyViewHolder(View view) {
             super(view);
@@ -144,6 +161,7 @@ public class InventionsAdapter extends RecyclerView.Adapter<InventionsAdapter.My
             like = (ImageView) view.findViewById(R.id.likeImageView);
             share = (ImageView) view.findViewById(R.id.shareImageView);
             progressBar = (ContentLoadingProgressBar) view.findViewById(R.id.progress);
+            mRootView = view;
         }
     }
 
