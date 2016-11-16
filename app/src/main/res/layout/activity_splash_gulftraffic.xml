@@ -8,25 +8,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tatweer.moh.takamulpoc.Activities.SplashActivity">
+    tools:context="com.tatweer.moh.takamulpoc.Activities.SplashActivityGulfTraffic">
 
    <ImageView
        android:id="@+id/strip1"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_centerInParent="true"
-       android:paddingRight="60dp"
-       android:src="@drawable/strip"
-       android:visibility="invisible"/>
+       android:paddingRight="120dp"
+       android:src="@drawable/strip"/>
 
    <ImageView
        android:id="@+id/strip2"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_centerInParent="true"
-       android:paddingRight="10dp"
-       android:src="@drawable/strip"
-       android:visibility="invisible"/>
+       android:paddingRight="30dp"
+       android:src="@drawable/strip"/>
 
    <ImageView
        android:id="@+id/mainTitle"
@@ -40,7 +38,6 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_centerInParent="true"
-       android:paddingRight="35dp"
-       android:src="@drawable/strip"
-       android:visibility="invisible"/>
+       android:paddingRight="75dp"
+       android:src="@drawable/strip"/>
 </RelativeLayout>

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.tatweer.moh.takamulpoc.R;
 
-public class SplashActivity extends AppCompatActivity implements Animation.AnimationListener {
+public class SplashActivityGulfTraffic extends AppCompatActivity implements Animation.AnimationListener {
 
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 5000;
@@ -21,13 +21,13 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_splash_gulftraffic);
 
         // load the animation
         titleAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.left_to_right);
         stripAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.top_to_bottom);
+                R.anim.strip_anim);
         stripAnimation3 = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.top_to_bottom_strip3);
         titleAnimation.setAnimationListener(this);
@@ -39,7 +39,10 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
         strip2 = (ImageView) findViewById(R.id.strip2);
         strip3 = (ImageView) findViewById(R.id.strip3);
         // start the animation
-        title.startAnimation(titleAnimation);
+        title.startAnimation(stripAnimation);
+        strip1.startAnimation(titleAnimation);
+        strip2.startAnimation(titleAnimation);
+        strip3.startAnimation(titleAnimation);
 
         new Handler().postDelayed(new Runnable() {
 
@@ -76,15 +79,15 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
     @Override
     public void onAnimationEnd(Animation animation) {
 
-        if (animation == titleAnimation) {
-            strip3.startAnimation(stripAnimation3);
-
-        }
-
-        if (animation == stripAnimation3) {
-            strip1.startAnimation(stripAnimation);
-            strip2.startAnimation(stripAnimation);
-        }
+//        if (animation == titleAnimation) {
+//            strip3.startAnimation(stripAnimation3);
+//
+//        }
+//
+//        if (animation == stripAnimation3) {
+//            strip1.startAnimation(stripAnimation);
+//            strip2.startAnimation(stripAnimation);
+//        }
 
     }
 

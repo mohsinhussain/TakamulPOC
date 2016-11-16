@@ -9,6 +9,16 @@
     tools:context="com.tatweer.moh.takamulpoc.Activities.InvestActivity"
     tools:showIn="@layout/activity_invest">
 
+    <com.nirhart.parallaxscroll.views.ParallaxScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:parallax_factor="1.2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
     <RelativeLayout
         android:id="@+id/titleLayout"
         android:layout_width="match_parent"
@@ -39,7 +49,6 @@
         android:id="@+id/investmentOptionsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titleLayout"
         android:orientation="vertical">
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -202,7 +211,6 @@
         android:id="@+id/investValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/investmentOptionsLayout"
         android:layout_margin="16dp"
         android:orientation="vertical"
         android:visibility="gone">
@@ -222,4 +230,8 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
+    </LinearLayout>
+
+    </com.nirhart.parallaxscroll.views.ParallaxScrollView>
 </RelativeLayout>

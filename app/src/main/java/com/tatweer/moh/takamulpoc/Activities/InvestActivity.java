@@ -1,11 +1,13 @@
 package com.tatweer.moh.takamulpoc.Activities;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,6 +25,7 @@ public class InvestActivity extends AppCompatActivity {
     LinearLayout investValue;
     RadioButton radioButton, radioButton1, radioButton2, radioButton3;
     EditText investAmountEditText;
+    Button investButton;
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -42,6 +45,7 @@ public class InvestActivity extends AppCompatActivity {
         radioButton1 =  (RadioButton) findViewById(R.id.radioButton1);
         radioButton2 =  (RadioButton) findViewById(R.id.radioButton2);
         radioButton3 =  (RadioButton) findViewById(R.id.radioButton3);
+        investButton = (Button) findViewById(R.id.investButton);
 
         radioButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +101,15 @@ public class InvestActivity extends AppCompatActivity {
         title.setText(getIntent().getExtras().getString("title"));
         Glide.with(InvestActivity.this).load(getIntent().getExtras().getInt("image")).into(titleImageView);
 
+        investButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(InvestActivity.this, PaymentActivity.class);
+                i.putExtras(getIntent());
+                i.putExtra("amount", investAmountEditText.getText().toString());
+                startActivity(i);
+            }
+        });
 
     }
 

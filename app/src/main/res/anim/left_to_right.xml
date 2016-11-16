@@ -7,6 +7,7 @@
         android:fillAfter="true"
         android:fillEnabled="true"
         android:fromAlpha="0.0"
+        android:startOffset="1500"
         android:toAlpha="1.0" />
 
 </set>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TAKAMUL</string>
+    <string name="app_name">Takamul</string>
     <string name="title_activity_main">TATWEER</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -13,4 +13,5 @@
     <string name="backdrop_subtitle">This season top 20 albums</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_invest">InvestActivity</string>
+    <string name="title_activity_payment">PaymentActivity</string>
 </resources>
