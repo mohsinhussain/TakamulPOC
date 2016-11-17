@@ -28,6 +28,7 @@
        android:visibility="invisible" />
 
 
+
    <ImageView
        android:id="@+id/logo"
        android:layout_width="wrap_content"
@@ -35,6 +36,17 @@
        android:layout_below="@+id/lampGray"
        android:layout_centerHorizontal="true"
        android:src="@drawable/takamul_logo"
-       android:visibility="invisible" />
+       android:visibility="visible" />
+
+   <ImageView
+       android:id="@+id/logoStrip"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/lampGray"
+       android:layout_centerHorizontal="true"
+       android:paddingLeft="40dp"
+       android:paddingTop="10dp"
+       android:src="@drawable/app_logo_takamul"
+       android:visibility="visible" />
 
 </RelativeLayout>

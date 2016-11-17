@@ -14,9 +14,9 @@ public class SplashActivityTakammul extends AppCompatActivity implements Animati
 
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 5000;
-    Animation titleAnimation;
+    Animation titleAnimation, verticalFlipAnimation;
     boolean finish = false;
-    ImageView lampGray, lampColored, logoImageView;
+    ImageView lampGray, lampColored, logoImageView, logoStrip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +26,22 @@ public class SplashActivityTakammul extends AppCompatActivity implements Animati
         // load the animation
         titleAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.left_to_right);
+        verticalFlipAnimation = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.vertical_flip);
 
         titleAnimation.setAnimationListener(this);
+        verticalFlipAnimation.setAnimationListener(this);
 
         lampGray = (ImageView) findViewById(R.id.lampGray);
         lampColored = (ImageView) findViewById(R.id.lampColored);
         logoImageView = (ImageView) findViewById(R.id.logo);
+        logoStrip = (ImageView) findViewById(R.id.logoStrip);
+
+
 
         lampColored.startAnimation(titleAnimation);
         logoImageView.startAnimation(titleAnimation);
+        logoStrip.startAnimation(titleAnimation);
 
 
         new Handler().postDelayed(new Runnable() {
@@ -72,10 +79,10 @@ public class SplashActivityTakammul extends AppCompatActivity implements Animati
     @Override
     public void onAnimationEnd(Animation animation) {
 
-//        if (animation == titleAnimation) {
-//            strip3.startAnimation(stripAnimation3);
-//
-//        }
+        if (animation == titleAnimation) {
+            logoStrip.startAnimation(verticalFlipAnimation);
+
+        }
 //
 //        if (animation == stripAnimation3) {
 //            strip1.startAnimation(stripAnimation);
