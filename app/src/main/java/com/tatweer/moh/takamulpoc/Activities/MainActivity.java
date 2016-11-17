@@ -1,6 +1,7 @@
 package com.tatweer.moh.takamulpoc.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -101,8 +102,14 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_logout) {
+            SharedPreferences preferences = getSharedPreferences("GulfTrafficPref",
+                    MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.remove("AccessToken");
+            editor.commit();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

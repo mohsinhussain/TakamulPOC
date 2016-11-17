@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Takamul</string>
+    <string name="app_name">Gulf Talent</string>
     <string name="title_activity_main">TATWEER</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -14,4 +14,6 @@
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_invest">InvestActivity</string>
     <string name="title_activity_payment">PaymentActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login_confirmation">LoginConfirmationActivity</string>
 </resources>

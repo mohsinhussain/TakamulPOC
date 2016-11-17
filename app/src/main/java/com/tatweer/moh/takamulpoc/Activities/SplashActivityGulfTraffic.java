@@ -1,6 +1,7 @@
 package com.tatweer.moh.takamulpoc.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -63,10 +64,26 @@ public class SplashActivityGulfTraffic extends AppCompatActivity implements Anim
 
     private void openMainActivity()
     {
-        Intent out = new Intent(this, MainActivity.class);
-        startActivity(out);
 
-        finish();
+        SharedPreferences preferences = getSharedPreferences("GulfTrafficPref", MODE_PRIVATE);
+        if (preferences.contains("AccessToken")) {
+//            Globals.getGlobal().AccessToken = preferences.getString("AccessToken", null);
+//            Globals.getGlobal().userName = preferences.getString("userName", null);
+//            //reset retro
+//            Globals.ResetRetrofit();
+            Intent out = new Intent(this, MainActivity.class);
+            startActivity(out);
+
+            finish();
+        } else {
+            Intent out = new Intent(this, LoginActivity.class);
+            startActivity(out);
+            finish();
+        }
+//        Intent out = new Intent(this, MainActivity.class);
+//        startActivity(out);
+//
+//        finish();
     }
 
     @Override
