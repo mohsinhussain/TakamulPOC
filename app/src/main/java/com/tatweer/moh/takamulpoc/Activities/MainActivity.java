@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.tatweer.moh.takamulpoc.Fragments.CategoriesFragment;
 import com.tatweer.moh.takamulpoc.Fragments.HomeFragment;
 import com.tatweer.moh.takamulpoc.R;
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        titles.add("Magic");
+        titles.add("Categories");
         titles.add("Popularity");
         titles.add("Newest");
         titles.add("End Date");
@@ -118,10 +119,14 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         public Fragment getItem(int i) {
-            Fragment fragment = new HomeFragment();
+            Fragment fragment;
+            if(i==0){
+                fragment = new CategoriesFragment();
+            }
+            else{
+                fragment = new HomeFragment();
+            }
             Bundle args = new Bundle();
-            // Our object is just an integer :-P
-            args.putInt(HomeFragment.ARG_OBJECT, i + 1);
             fragment.setArguments(args);
             return fragment;
         }
