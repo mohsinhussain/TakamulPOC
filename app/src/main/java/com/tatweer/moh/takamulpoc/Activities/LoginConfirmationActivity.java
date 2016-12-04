@@ -26,27 +26,33 @@ public class LoginConfirmationActivity extends AppCompatActivity {
         visitorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginUser();
+                loginUser(1);
             }
         });
 
         exhibitorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginUser();
+                loginUser(2);
             }
         });
 
 
     }
 
-    public void loginUser()
+    public void loginUser(int type)
     {
         SharedPreferences preferences = getSharedPreferences("GulfTrafficPref",
                 MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
-        editor.putString("AccessToken", "mohsin");
+        if(type==1){
+            editor.putString("AccessToken", "visitor");
+        }
+        else{
+            editor.putString("AccessToken", "exhibitor");
+        }
+
 //        editor.putString("userName", userName);
         editor.commit();
 

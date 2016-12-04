@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Please specify your role in the exhibition:"
+        android:textSize="@dimen/title_text"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+    <Button
+        android:id="@+id/exhibitorButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        android:background="@color/colorAccent"
+        android:drawablePadding="8dp"
+        android:drawableTop="@drawable/ic_card_membership_white_48dp"
+        android:padding="16dp"
+        android:text="EXHIBITOR"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/visitorButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/colorAccent"
+        android:drawablePadding="8dp"
+        android:drawableTop="@drawable/ic_visibility_white_48dp"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:text="VISITOR"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

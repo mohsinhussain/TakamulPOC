@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.tatweer.moh.takamulpoc.Fragments.CategoriesFragment;
+import com.tatweer.moh.takamulpoc.Fragments.ExhibitorsFragment;
 import com.tatweer.moh.takamulpoc.Fragments.HomeFragment;
 import com.tatweer.moh.takamulpoc.R;
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity
     DemoCollectionPagerAdapter mDemoCollectionPagerAdapter;
     ViewPager mViewPager;
     ArrayList<String> titles = new ArrayList<>();
-
+    SharedPreferences preferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,10 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         titles.add("Categories");
+        preferences = getSharedPreferences("GulfTrafficPref", MODE_PRIVATE);
+        if (preferences.contains("AccessToken")&&preferences.getString("AccessToken", null).equalsIgnoreCase("visitor")) {
+            titles.add("Exhibitors");
+        }
         titles.add("Popularity");
         titles.add("Newest");
         titles.add("End Date");
@@ -130,9 +135,17 @@ public class MainActivity extends AppCompatActivity
             if(i==0){
                 fragment = new CategoriesFragment();
             }
-            else{
-                fragment = new HomeFragment();
+            else if(i==1) {
+                if (preferences.contains("AccessToken") && preferences.getString("AccessToken", null).equalsIgnoreCase("visitor")) {
+                    fragment = new ExhibitorsFragment();
+                }
+                else{
+                    fragment = new HomeFragment();
+                }
             }
+            else{
+                    fragment = new HomeFragment();
+                }
             Bundle args = new Bundle();
             fragment.setArguments(args);
             return fragment;

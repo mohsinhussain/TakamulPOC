@@ -85,7 +85,7 @@
                 android:layout_toLeftOf="@+id/shareImageView"
                 android:clickable="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/heart_un_selected" />
+                android:src="@drawable/heart_selected" />
 
             <ImageView
                 android:id="@+id/shareImageView"

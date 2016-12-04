@@ -44,6 +44,14 @@
         <activity
             android:name=".Activities.LoginConfirmationActivity"
             android:label="@string/title_activity_login_confirmation"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.LoginDetailActivity"
+            android:label="@string/title_activity_login_detail"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.RegisterVisitor"
+            android:label="@string/title_activity_register_visitor"
             android:theme="@style/AppTheme"></activity>
     </application>
 
