@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Gulf Traffic</string>
+    <string name="app_name">Takamul</string>
     <string name="title_activity_main">TATWEER</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -11,12 +11,12 @@
     <string name="action_play_next">Play Next</string>
     <string name="backdrop_title">LOVE MUSIC</string>
     <string name="backdrop_subtitle">This season top 20 albums</string>
-    <string name="title_activity_detail">DetailActivity</string>
-    <string name="title_activity_invest">InvestActivity</string>
-    <string name="title_activity_payment">PaymentActivity</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_login_confirmation">LoginConfirmationActivity</string>
-    <string name="title_activity_register_exhibitor">RegisterExhibitor</string>
-    <string name="title_activity_login_detail">LoginDetailActivity</string>
-    <string name="title_activity_register_visitor">RegisterVisitor</string>
+    <string name="title_activity_detail">Detail</string>
+    <string name="title_activity_invest">Invest</string>
+    <string name="title_activity_payment">Payment</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_login_confirmation">Login with Facebook</string>
+    <string name="title_activity_register_exhibitor">Register</string>
+    <string name="title_activity_login_detail">Sign In</string>
+    <string name="title_activity_register_visitor">Register</string>
 </resources>

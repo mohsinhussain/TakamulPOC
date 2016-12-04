@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#536EB1</color>
-    <color name="colorPrimaryDark">#2E2B71</color>
-    <color name="colorPrimaryLight">#779dfa</color>
-    <color name="colorAccent">#F05B25</color>
+    <color name="colorPrimary">#943032</color>
+    <color name="colorPrimaryDark">#4A1819</color>
+    <color name="colorPrimaryLight">#cd6264</color>
+    <color name="colorAccent">#606060</color>
     <color name="background">#FFFFFF</color>
     <color name="textColorPrimary">#222222</color>
     <color name="textColorSecondary">#666666</color>
@@ -12,5 +12,6 @@
     <color name="edit_background">#ffffff</color>
     <color name="viewBg">#f1f5f8</color>
     <color name="album_title">#4c4c4c</color>
+    <color name="fb_bg">#3C579E</color>
     <color name="splash_bg">#ded4d2</color>
 </resources>

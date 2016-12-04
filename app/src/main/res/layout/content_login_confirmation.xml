@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="32dp"
-        android:src="@drawable/gulf_traffic_logo" />
+        android:src="@drawable/app_logo_takamul" />
 
     <TextView
         android:id="@+id/fbMessageTextView"
@@ -38,7 +38,7 @@
         android:layout_below="@+id/fbMessageTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="Gulf Traffic will receive:" />
+        android:text="TAKAMUL will receive:" />
 
     <TextView
         android:id="@+id/message2TextView"
@@ -56,10 +56,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/message2TextView"
         android:layout_marginTop="64dp"
-        android:background="@color/colorAccent"
+        android:background="@color/fb_bg"
         android:drawableLeft="@drawable/ic_card_membership_white_48dp"
         android:padding="16dp"
-        android:text="Continue as Exhibitor"
+        android:text="I WANT TO INVEST"
         android:textColor="#fff"
         android:textStyle="bold" />
 
@@ -70,10 +70,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/exhibitorButton"
         android:layout_marginTop="24dp"
-        android:background="@color/colorAccent"
+        android:background="@color/fb_bg"
         android:drawableLeft="@drawable/ic_visibility_white_48dp"
         android:padding="16dp"
-        android:text="Continue as Visitor"
+        android:text="I HAVE AN INVENTION"
         android:textColor="#fff"
         android:textStyle="bold" />
 

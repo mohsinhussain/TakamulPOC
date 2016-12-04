@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="32dp"
-        android:src="@drawable/gulf_traffic_logo" />
+        android:src="@drawable/app_logo_takamul" />
 
     <Button
         android:id="@+id/fbLoginButton"

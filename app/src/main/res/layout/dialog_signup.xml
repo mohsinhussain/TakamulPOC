@@ -29,7 +29,7 @@
         android:drawablePadding="8dp"
         android:drawableTop="@drawable/ic_card_membership_white_48dp"
         android:padding="16dp"
-        android:text="EXHIBITOR"
+        android:text="INVESTOR"
         android:textColor="#fff"
         android:textStyle="bold" />
 
@@ -44,7 +44,7 @@
         android:drawableTop="@drawable/ic_visibility_white_48dp"
         android:elevation="4dp"
         android:padding="16dp"
-        android:text="VISITOR"
+        android:text="INVENTOR"
         android:textColor="#fff"
         android:textStyle="bold" />
 
